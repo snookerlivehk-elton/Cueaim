@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cue Aim Live — Demo Site</title>
+  <meta name="description" content="Cue Aim Live — Play. Score. Broadcast. Demo page with pricing and auth forms" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <div class="brand">
+        <img src="assets/logo.png" alt="Cue Aim Live" class="logo-img" />
+        <svg width="36" height="36" viewBox="0 0 64 64" class="logo logo-svg" aria-hidden="true">
+          <circle cx="44" cy="20" r="6" fill="#e53935"></circle>
+          <path d="M8 40c8-10 17-16 28-18" stroke="#fff" stroke-width="6" fill="none" stroke-linecap="round"></path>
+          <path d="M10 48c14 2 28-2 40-12" stroke="#fff" stroke-width="6" fill="none" stroke-linecap="round"></path>
+        </svg>
+        <span class="brand-name">Cue Aim Live</span>
+      </div>
+      <nav class="links">
+        <a href="#features">Features</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#auth" data-open="login">Sign in</a>
+        <a href="#auth" data-open="register" class="btn btn-outline">Sign up</a>
+        <a href="index.html" aria-label="中文" title="中文">中文</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <p class="kicker">FREE IN BETA ACCESS</p>
+          <h1 class="hero-title">PLAY. SCORE. <span class="underline">BROADCAST.</span></h1>
+          <p class="subtitle">Cue Aim Live — On in 1 Second! TV‑grade streaming for every match.</p>
+          <div class="hero-ctas">
+            <a href="#pricing" class="btn btn-primary">Subscribe Now</a>
+            <button class="btn btn-quiet" data-open="login">Already have an account?</button>
+          </div>
+        </div>
+        <div class="hero-art">
+          <div class="phone-mock">
+            <div class="phone-header"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+            <div class="phone-screen">
+              <div class="splash">
+                <img src="assets/logo.png" alt="Cue Aim Live" class="splash-logo-img" />
+                <div class="splash-logo"></div>
+                <div class="splash-title">Cue Aim Live</div>
+                <div class="splash-tag">On in 1 Second!</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-fade"></div>
+    </section>
+
+    <section id="features" class="section">
+      <div class="container">
+        <h2 class="section-title">Key Features</h2>
+        <div class="grid features-grid">
+          <div class="card">
+            <h3>Stream to YouTube</h3>
+            <p>Built‑in streaming setup. Go live in seconds.</p>
+          </div>
+          <div class="card">
+            <h3>Pro Score Overlays</h3>
+            <p>Real‑time scoreboard with frames, breaks and fouls.</p>
+          </div>
+          <div class="card">
+            <h3>Full HD 1080p</h3>
+            <p>Stable, crisp and detailed output.</p>
+          </div>
+          <div class="card">
+            <h3>Advanced Stats</h3>
+            <p>Win rate, streaks and history at a glance.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing" class="section alt">
+      <div class="container">
+        <h2 class="section-title">Pricing</h2>
+        <div class="grid pricing-grid">
+          <div class="card price">
+            <div class="badge">24h</div>
+            <h3>HKD 18<span class="unit"> / 24h Pass</span></h3>
+            <ul class="features-list">
+              <li>All features for 24 hours</li>
+              <li>Perfect for one‑off events</li>
+            </ul>
+            <button class="btn btn-primary" data-checkout="pass-24h">Buy Now</button>
+          </div>
+          <div class="card price highlight">
+            <div class="badge">Monthly</div>
+            <h3>HKD 88<span class="unit"> / month</span></h3>
+            <ul class="features-list">
+              <li>Unlimited streaming & overlays</li>
+              <li>Advanced stats & history</li>
+              <li>Priority support</li>
+            </ul>
+            <button class="btn btn-primary" data-checkout="monthly">Subscribe</button>
+            <p class="subtext">or <a href="#" data-checkout="annual">Annual HKD 688</a></p>
+          </div>
+          <div class="card price">
+            <div class="badge">Annual</div>
+            <h3>HKD 688<span class="unit"> / year</span></h3>
+            <ul class="features-list">
+              <li>Unlimited all year</li>
+              <li>Best value</li>
+              <li>Dedicated support</li>
+            </ul>
+            <button class="btn btn-outline" data-checkout="annual">Subscribe</button>
+          </div>
+        </div>
+        <div class="payment-note">Demo only — replace with Stripe Checkout for production.</div>
+      </div>
+    </section>
+
+    <section id="auth" class="section">
+      <div class="container auth-cards">
+        <div class="card auth">
+          <h3>Sign in</h3>
+          <form id="login-form" autocomplete="on" novalidate>
+            <label>Email
+              <input type="email" id="login-email" required placeholder="name@example.com" />
+            </label>
+            <label>Password
+              <div class="input-with-toggle">
+                <input type="password" id="login-password" required placeholder="••••••••" />
+                <button type="button" class="eye" data-toggle="#login-password" aria-label="Show/Hide">👁</button>
+              </div>
+            </label>
+            <button class="btn btn-primary" type="submit">Sign in</button>
+            <p class="subtext">No account? <a href="#" data-open="register">Sign up</a></p>
+          </form>
+        </div>
+        <div class="card auth">
+          <h3>Sign up</h3>
+          <form id="register-form" novalidate>
+            <label>Email
+              <input type="email" id="reg-email" required placeholder="name@example.com" />
+            </label>
+            <label class="code-row">Verification Code
+              <input type="text" id="reg-code" inputmode="numeric" pattern="\\d{6}" placeholder="6 digits" />
+              <button type="button" class="btn btn-outline small" id="send-code">Send Code</button>
+            </label>
+            <label>Password
+              <div class="input-with-toggle">
+                <input type="password" id="reg-password" required minlength="8" placeholder="At least 8 chars" />
+                <button type="button" class="eye" data-toggle="#reg-password" aria-label="Show/Hide">👁</button>
+              </div>
+            </label>
+            <label>Confirm Password
+              <input type="password" id="reg-password2" required placeholder="Re‑enter password" />
+            </label>
+            <label>Nickname
+              <input type="text" id="reg-nickname" placeholder="e.g. KingSnooker" />
+            </label>
+            <div class="row">
+              <label>Gender
+                <div class="choices">
+                  <label class="chip"><input type="radio" name="gender" value="M" /> Male</label>
+                  <label class="chip"><input type="radio" name="gender" value="F" checked /> Female</label>
+                </div>
+              </label>
+              <label>Date of Birth
+                <input type="date" id="reg-dob" />
+              </label>
+            </div>
+            <label class="agree">
+              <input type="checkbox" id="reg-accept" required />
+              I agree to the <a href="#" data-open="terms">Privacy & Terms</a>
+            </label>
+            <button class="btn btn-primary" type="submit">Create Account</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container foot-inner">
+      <div>© 2026 Cue Aim Live • Demo</div>
+      <div class="foot-links">
+        <a href="#features">Features</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#auth">Sign in / Sign up</a>
+      </div>
+    </div>
+  </footer>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <dialog id="mock-checkout" class="modal">
+    <form method="dialog" class="modal-body">
+      <h3>Mock Checkout</h3>
+      <p>Plan: <span id="plan-name">Monthly HKD 88</span></p>
+      <label>Card Number
+        <input placeholder="4242 4242 4242 4242" />
+      </label>
+      <label>Expiry
+        <input placeholder="MM/YY" />
+      </label>
+      <label>CVC
+        <input placeholder="123" />
+      </label>
+      <menu class="modal-actions">
+        <button value="cancel" class="btn btn-quiet">Cancel</button>
+        <button value="ok" class="btn btn-primary">Pay</button>
+      </menu>
+    </form>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>
+

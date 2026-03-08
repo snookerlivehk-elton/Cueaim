@@ -115,7 +115,16 @@
     btn.addEventListener('click', e => {
       e.preventDefault()
       const plan = btn.dataset.checkout
-      planName.textContent = plan === 'pro-yearly' ? 'Pro 年費 HKD 499' : 'Pro 月費 HKD 49'
+      const zh = document.documentElement.lang && document.documentElement.lang.startsWith('zh')
+      let name = ''
+      if (plan === 'pass-24h') {
+        name = zh ? '24 小時通行證 HKD 18' : '24h Pass HKD 18'
+      } else if (plan === 'annual') {
+        name = zh ? '年費 HKD 688' : 'Annual HKD 688'
+      } else {
+        name = zh ? '月費 HKD 88' : 'Monthly HKD 88'
+      }
+      planName.textContent = name
       if (typeof dialog?.showModal === 'function') {
         dialog.showModal()
       } else {
