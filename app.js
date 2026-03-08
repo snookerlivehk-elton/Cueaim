@@ -128,5 +128,12 @@
       toast('付款成功（展示用）')
     }
   })
+
+  // Enable high-res PNG logo when available
+  ;(() => {
+    const img = new Image()
+    img.onload = () => document.body.classList.add('has-logo-img')
+    img.src = 'assets/logo.png'
+  })()
 })()
 

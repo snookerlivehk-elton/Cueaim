@@ -27,6 +27,9 @@ body{
 .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
 .brand{display:flex;align-items:center;gap:10px;color:#fff;font-weight:700;letter-spacing:.5px}
 .brand .logo{filter:drop-shadow(0 2px 6px rgba(0,0,0,.2))}
+.logo-img{display:none;height:36px;width:auto;image-rendering:-webkit-optimize-contrast;image-rendering:crisp-edges}
+.has-logo-img .logo-img{display:block}
+.has-logo-img .logo-svg{display:none}
 .brand-name .accent{color:#ff5252}
 .links a{color:#fff;text-decoration:none;margin-left:18px;opacity:.95}
 .links a:hover{opacity:1}
@@ -63,6 +66,9 @@ body{
 .phone-header .dot{width:8px;height:8px;border-radius:50%;background:#fff;opacity:.6}
 .phone-screen{height:100%;background:#18a74f;display:flex;align-items:center;justify-content:center}
 .splash{color:#fff;text-align:center}
+.splash-logo-img{display:none;width:120px;height:auto;margin:0 auto 6px auto;image-rendering:-webkit-optimize-contrast;image-rendering:crisp-edges}
+.has-logo-img .splash-logo-img{display:block}
+.has-logo-img .splash-logo{display:none}
 .splash-logo{width:84px;height:84px;margin:0 auto 6px auto;border-radius:50%;
   background: radial-gradient(circle at 64% 32%, var(--accent) 0 14px, transparent 15px),
               conic-gradient(from 110deg at 44% 60%, #fff 0 20%, transparent 0 100%);
