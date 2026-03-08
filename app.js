@@ -141,7 +141,15 @@
   // Enable high-res PNG logo when available
   ;(() => {
     const img = new Image()
-    img.onload = () => document.body.classList.add('has-logo-img')
+    img.onload = () => {
+      document.body.classList.add('has-logo-img')
+    }
+    img.onerror = () => {
+      document.body.classList.remove('has-logo-img')
+      document.querySelectorAll('.logo-img,.splash-logo-img').forEach(el => {
+        el.style.display = 'none'
+      })
+    }
     img.src = 'assets/logo.png'
   })()
 })()
