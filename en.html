@@ -6,6 +6,7 @@
   <title>Cue Aim Live — Demo Site</title>
   <meta name="description" content="Cue Aim Live — Play. Score. Broadcast. Demo page with pricing and auth forms" />
   <link rel="stylesheet" href="styles.css" />
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
 </head>
 <body>
   <header class="site-header">
@@ -138,6 +139,9 @@
             <button class="btn btn-primary" type="submit">Sign in</button>
             <p class="subtext">No account? <a href="#" data-open="register">Sign up</a></p>
           </form>
+          <div class="oauth">
+            <div id="google-signin" data-client-id=""></div>
+          </div>
         </div>
         <div class="card auth">
           <h3>Sign up</h3>
@@ -219,4 +223,3 @@
   <script src="app.js"></script>
 </body>
 </html>
-

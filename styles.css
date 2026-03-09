@@ -121,6 +121,7 @@ body{
 .chip{display:inline-flex;align-items:center;gap:6px;background:#eff9f3;padding:6px 10px;border-radius:999px;border:1px solid #cfe6d7}
 .agree{display:flex;align-items:center;gap:8px;margin:12px 0}
 .code-row{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center}
+.oauth{margin-top:10px;display:flex;justify-content:center}
 
 .site-footer{
   color:#e8fff0;border-top:1px solid rgba(255,255,255,.18);padding:20px 0;margin-top:40px

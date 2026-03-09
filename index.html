@@ -6,6 +6,7 @@
   <title>Cue Aim Live 瞄點直播 — 展示站</title>
   <meta name="description" content="Cue Aim Live 瞄點直播，一秒 On Live！展示頁面與收費、註冊、登入介面示例" />
   <link rel="stylesheet" href="styles.css" />
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
 </head>
 <body>
   <header class="site-header">
@@ -140,6 +141,9 @@
             <button class="btn btn-primary" type="submit">登入</button>
             <p class="subtext">沒有帳號？<a href="#" data-open="register">立即註冊</a></p>
           </form>
+          <div class="oauth">
+            <div id="google-signin" data-client-id=""></div>
+          </div>
         </div>
         <div class="card auth">
           <h3>註冊</h3>

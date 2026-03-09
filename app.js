@@ -152,5 +152,32 @@
     }
     img.src = 'assets/logo.png'
   })()
+
+  // Google Identity Services sign-in
+  ;(() => {
+    const mount = document.getElementById('google-signin')
+    const clientId = (mount && mount.dataset.clientId) || localStorage.getItem('google_client_id')
+    if (!mount || !window.google || !window.google.accounts || !window.google.accounts.id) return
+    if (!clientId) return
+    const onCred = (resp) => {
+      try {
+        const payload = JSON.parse(atob(resp.credential.split('.')[1]))
+        const nick = payload.name || 'Google 使用者'
+        toast(`已以 Google 登入：${nick}`)
+        const nav = document.querySelector('.links')
+        if (nav) {
+          nav.innerHTML = `<span style="color:#fff;opacity:.95">歡迎，${nick}</span>
+            <a href="#pricing">收費方案</a>
+            <a href="#" id="logout" class="btn btn-outline">登出</a>`
+          document.getElementById('logout')?.addEventListener('click', e => {
+            e.preventDefault()
+            location.reload()
+          })
+        }
+      } catch {}
+    }
+    google.accounts.id.initialize({ client_id: clientId, callback: onCred })
+    google.accounts.id.renderButton(mount, { theme: 'outline', size: 'large' })
+  })()
 })()
 
