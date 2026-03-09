@@ -157,8 +157,8 @@
   ;(() => {
     const mount = document.getElementById('google-signin')
     const clientId = (mount && mount.dataset.clientId) || localStorage.getItem('google_client_id')
-    if (!mount || !window.google || !window.google.accounts || !window.google.accounts.id) return
-    if (!clientId) return
+    if (!mount || !clientId) return
+
     const onCred = (resp) => {
       try {
         const payload = JSON.parse(atob(resp.credential.split('.')[1]))
@@ -176,8 +176,22 @@
         }
       } catch {}
     }
-    google.accounts.id.initialize({ client_id: clientId, callback: onCred })
-    google.accounts.id.renderButton(mount, { theme: 'outline', size: 'large' })
+
+    let tries = 0
+    const MAX_TRIES = 50 // ~10s
+    const tryInit = () => {
+      const gis = window.google && window.google.accounts && window.google.accounts.id
+      if (gis) {
+        try {
+          window.google.accounts.id.initialize({ client_id: clientId, callback: onCred })
+          window.google.accounts.id.renderButton(mount, { theme: 'outline', size: 'large' })
+        } catch {}
+        return
+      }
+      if (tries++ < MAX_TRIES) setTimeout(tryInit, 200)
+    }
+    // 避免行動裝置載入較慢導致未渲染，加入重試
+    tryInit()
   })()
 })()
 
